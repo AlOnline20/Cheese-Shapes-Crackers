@@ -25,9 +25,12 @@ if want_instructions == "yes":
   print("The Questions proceeded will ask for numbers that will make")
   print("       the area and perimeter of a shape chosen.           ")
   sleep(6)
-  print("    it will ask you to choose a shape from those given,    ")
+  print("    It will ask you to choose a shape from those given,    ")
   print("   and it will ask if you would like to do another shape.  ")
   sleep(5)
+  print("  You will answer with yes or no questions or if prompted, ")
+  print("             will answer with shapes or numbers.            ")
+  sleep(4)
 
 print("     Now    ")
 sleep(2)
