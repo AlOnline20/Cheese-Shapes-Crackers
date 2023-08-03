@@ -1,5 +1,4 @@
 # sleep
-
 from time import sleep
 
 # yes or no function
@@ -23,12 +22,16 @@ want_instructions = yes_no("Do you want to read the instructions? :")
 sleep(1)
 
 if want_instructions == "yes":
-  print("")
-  print("")
-  print("")
-  print("")
-  sleep(3)
+  print("The Questions proceeded will ask for numbers that will make")
+  print("       the area and perimeter of a shape chosen.           ")
+  sleep(6)
+  print("    it will ask you to choose a shape from those given,    ")
+  print("   and it will ask if you would like to do another shape.  ")
+  sleep(5)
 
-print("Now to begin")
+print("     Now    ")
+sleep(2)
+print("Lettuce begin")
 sleep(2)
 print()
+
