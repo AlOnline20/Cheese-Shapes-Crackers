@@ -38,3 +38,31 @@ print("Lettuce begin")
 sleep(2)
 print()
 
+loopin = True
+
+while loopin == True:
+  print("The four shapes that are available are circle, rectangle, triangle, and square")
+  print()
+  sleep(2)
+  shaper = input("now which one of these four shapes would you like to input dimensions for? :").lower()
+  if shaper == "circle":
+    print("Circle huh, ok then.")
+    shapes = "circle"
+    break
+  if shaper == "triangle":
+    print("Triangle, nice choice.")
+    shapes = "triangle"
+    break
+  if shaper == "rectangle":
+    print("Rectangle, bold choice.")
+    shapes = "rectangle"
+    break
+  if shaper == "square":
+    print("Square, alright then")
+    shapes = "square"
+    break
+  else:
+    print("please enter one of the four shapes given")
+
+print()
+print(shapes)
