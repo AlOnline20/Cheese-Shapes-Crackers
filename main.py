@@ -1,5 +1,6 @@
 # sleep
 from time import sleep
+from types import EllipsisType
 
 # yes or no function
 def yes_no(question):
@@ -21,6 +22,7 @@ def yes_no(question):
 want_instructions = yes_no("Do you want to read the instructions? :")
 sleep(1)
 
+# Instructions that tell the user what to expect
 if want_instructions == "yes":
   print("The Questions proceeded will ask for numbers that will make")
   print("       the area and perimeter of a shape chosen.           ")
@@ -32,26 +34,32 @@ if want_instructions == "yes":
   print("             will answer with shapes or numbers.            ")
   sleep(4)
 
+
 print("     Now    ")
 sleep(2)
+#pun to make the user laugh
 print("Lettuce begin")
 sleep(2)
 print()
 
+#to keep loop
 loopin = True
 
+# while loop to choose shape
 while loopin == True:
-  print("The four shapes that are available are circle, rectangle, triangle, and square")
+  # the four shapes that are available
+  print("The four shapes that are available are parallelogram, rectangle, circle, and square")
   print()
   sleep(2)
   shaper = input("now which one of these four shapes would you like to input dimensions for? :").lower()
-  if shaper == "circle":
-    print("Circle huh, ok then.")
-    shapes = "circle"
+  # code that makes sure each choice is recorded for later
+  if shaper == "parallelogram":
+    print("parallelogram huh, ok then.")
+    shapes = "parallelogram"
     break
-  if shaper == "triangle":
-    print("Triangle, nice choice.")
-    shapes = "triangle"
+  if shaper == "circle":
+    print("Circle, nice choice.")
+    shapes = "circle"
     break
   if shaper == "rectangle":
     print("Rectangle, bold choice.")
@@ -62,7 +70,48 @@ while loopin == True:
     shapes = "square"
     break
   else:
+    #error prevention
     print("please enter one of the four shapes given")
 
-print()
-print(shapes)
+    
+sleep(1)
+print("now it is time to enter the dimensions for the shape")
+
+looping = True
+MAX_VALUE = 200
+MIN_VALUE = 2
+
+#loop for dimension values
+while looping == True:
+  try:
+    #inputs for the dimensions
+    if shapes == "parallelogram":
+      print("with these values input, the min will be 2 & the max will be 200")
+      print()
+      base = int(input("please enter the base of the parallelogram :"))
+      print()
+      height = int(input("please enter the height of the parallelogram :"))
+      print()
+    if shapes == "circle":
+      print("with this value input, the min will be 2 & the max will be 200")
+      print()
+      radius = int(input("please enter the radius of the circle :"))
+      print()
+    if shapes == "rectangle":
+      print("with these values input, the min will be 2 & the max will be 200")
+      print()
+      length = int(input("please enter the length of the rectangle :"))
+      print()
+      width = int(input("please enter the width of the rectangle :"))
+      print()
+    if shapes == "square":
+      print("with this value input, the min will be 2 & the max will be 200")
+      print()
+      side = int(input("please enter the side of the square :"))
+      print()
+    else:
+      print()
+      break
+  except ValueError:
+    print()
+    print("please enter the correct value")
