@@ -1,6 +1,5 @@
 # sleep
 from time import sleep
-from types import EllipsisType
 
 # yes or no function
 def yes_no(question):
@@ -16,6 +15,18 @@ def yes_no(question):
 
     else:
       print("please enter yes or no")
+
+# number checker function
+def num_check(question):
+  
+  while True:
+    try:
+      
+      response = int(input(question))
+      return response
+      
+    except ValueError:
+      print("please enter an integer")
 
 # main routine down below
 
@@ -44,6 +55,8 @@ print()
 
 #to keep loop
 loopin = True
+
+
 
 # while loop to choose shape
 while loopin == True:
@@ -88,30 +101,49 @@ while looping == True:
     if shapes == "parallelogram":
       print("with these values input, the min will be 2 & the max will be 200")
       print()
-      base = int(input("please enter the base of the parallelogram :"))
+      base = num_check("please enter the base of the parallelogram :")
       print()
-      height = int(input("please enter the height of the parallelogram :"))
+      height = num_check("please enter the height of the parallelogram :")
       print()
+      if base < MIN_VALUE or base > MAX_VALUE or height < MIN_VALUE or height > MAX_VALUE:
+        print("please enter a value input between the minimum and maximum values")
+        print()
+      else:
+        break
     if shapes == "circle":
       print("with this value input, the min will be 2 & the max will be 200")
       print()
-      radius = int(input("please enter the radius of the circle :"))
+      radius = num_check("please enter the radius of the circle :")
       print()
+      if radius < MIN_VALUE or radius > MAX_VALUE:
+        print("please enter a value input between the minimum and maximum values")
+        print()
+      else:
+        break
     if shapes == "rectangle":
       print("with these values input, the min will be 2 & the max will be 200")
       print()
-      length = int(input("please enter the length of the rectangle :"))
+      length = num_check("please enter the length of the rectangle :")
       print()
-      width = int(input("please enter the width of the rectangle :"))
+      width = num_check("please enter the width of the rectangle :")
       print()
+      if length < MIN_VALUE or length > MAX_VALUE or width < MIN_VALUE or width > MAX_VALUE:
+        print("please enter a value input between the minimum and maximum values")
+        print()
+      else:
+        break
     if shapes == "square":
       print("with this value input, the min will be 2 & the max will be 200")
       print()
-      side = int(input("please enter the side of the square :"))
+      side = num_check("please enter the side of the square :")
       print()
-    else:
-      print()
-      break
+      if side < MIN_VALUE or side > MAX_VALUE:
+        print("please enter a value input between the minimum and maximum values")
+        print()
+      else:
+        break
+
   except ValueError:
     print()
     print("please enter the correct value")
+
