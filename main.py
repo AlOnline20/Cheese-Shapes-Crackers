@@ -68,18 +68,22 @@ while loopin == True:
   # code that makes sure each choice is recorded for later, small comments to make the user chuckle
   if shaper == "parallelogram":
     print("parallelogram huh, ok then.")
+    print()
     shapes = "parallelogram"
     break
   if shaper == "circle":
     print("Circle, nice choice.")
+    print()
     shapes = "circle"
     break
   if shaper == "rectangle":
     print("Rectangle, bold choice.")
+    print()
     shapes = "rectangle"
     break
   if shaper == "square":
-    print("Square, alright then")
+    print("Square, wow first pick huh")
+    print()
     shapes = "square"
     break
   else:
@@ -90,6 +94,7 @@ while loopin == True:
 # just for looks
 sleep(1)
 print("now it is time to enter the dimensions for the shape")
+
 
 # set loopin as well as the MIN & MAX values
 looping = True
@@ -160,20 +165,20 @@ while looping == True:
 if shapes == "parallelogram":
   print()
   para_answer = base * height 
-  print(para_answer)
+  print("in total the area of a parallelogram is {}cm".format(para_answer))
 # calculations for the circle area
 if shapes == "circle":
   print()
   circl_answer = 3.14 * (radius * radius)
-  print(circl_answer)
+  print("in total the area of a circle is {}cm".format(circl_answer))
 # calculations for the rectangle area
 if shapes == "rectangle":
   print()
   rect_answer = width * length
-  print(rect_answer)
+  print("in total the area of a rectangle is {}cm".format(rect_answer))
 # calculations for the square area
 if shapes == "square":
   print()
   squar_answer = side * side
-  print(squar_answer)
+  print("in total the area of a square is {}cm".format(squar_answer))
 
