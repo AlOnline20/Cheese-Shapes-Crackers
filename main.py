@@ -48,7 +48,7 @@ if want_instructions == "yes":
 
 print("     Now    ")
 sleep(2)
-#pun to make the user laugh
+# pun to make the user laugh
 print("Lettuce begin")
 sleep(2)
 print()
@@ -65,7 +65,7 @@ while loopin == True:
   print()
   sleep(2)
   shaper = input("now which one of these four shapes would you like to input dimensions for? :").lower()
-  # code that makes sure each choice is recorded for later
+  # code that makes sure each choice is recorded for later, small comments to make the user chuckle
   if shaper == "parallelogram":
     print("parallelogram huh, ok then.")
     shapes = "parallelogram"
@@ -86,10 +86,12 @@ while loopin == True:
     #error prevention
     print("please enter one of the four shapes given")
 
-    
+
+# just for looks
 sleep(1)
 print("now it is time to enter the dimensions for the shape")
 
+# set loopin as well as the MIN & MAX values
 looping = True
 MAX_VALUE = 200
 MIN_VALUE = 2
@@ -97,7 +99,7 @@ MIN_VALUE = 2
 #loop for dimension values
 while looping == True:
   try:
-    #inputs for the dimensions
+    #inputs for the parallelogram dimensions
     if shapes == "parallelogram":
       print("with these values input, the min will be 2 & the max will be 200")
       print()
@@ -105,21 +107,25 @@ while looping == True:
       print()
       height = num_check("please enter the height of the parallelogram :")
       print()
+      # makes sure the min and max of the parallelogram inputs are set and not overlooked
       if base < MIN_VALUE or base > MAX_VALUE or height < MIN_VALUE or height > MAX_VALUE:
         print("please enter a value input between the minimum and maximum values")
         print()
       else:
         break
+    # inputs for the parallelogram dimensions
     if shapes == "circle":
       print("with this value input, the min will be 2 & the max will be 200")
       print()
       radius = num_check("please enter the radius of the circle :")
       print()
+      # makes sure the min and max of the circle input are set and not overlooked
       if radius < MIN_VALUE or radius > MAX_VALUE:
         print("please enter a value input between the minimum and maximum values")
         print()
       else:
         break
+    # inputs for the rectangle dimensions
     if shapes == "rectangle":
       print("with these values input, the min will be 2 & the max will be 200")
       print()
@@ -127,16 +133,19 @@ while looping == True:
       print()
       width = num_check("please enter the width of the rectangle :")
       print()
+      # makes sure the min and max of the rectangle inputs are set and not overlooked
       if length < MIN_VALUE or length > MAX_VALUE or width < MIN_VALUE or width > MAX_VALUE:
         print("please enter a value input between the minimum and maximum values")
         print()
       else:
         break
+    # inputs for the rectangle dimensions
     if shapes == "square":
       print("with this value input, the min will be 2 & the max will be 200")
       print()
       side = num_check("please enter the side of the square :")
       print()
+      # makes sure the min and max of the square input are set and not overlooked
       if side < MIN_VALUE or side > MAX_VALUE:
         print("please enter a value input between the minimum and maximum values")
         print()
@@ -146,4 +155,25 @@ while looping == True:
   except ValueError:
     print()
     print("please enter the correct value")
+
+# calculations for the parallelogram area
+if shapes == "parallelogram":
+  print()
+  para_answer = base * height 
+  print(para_answer)
+# calculations for the circle area
+if shapes == "circle":
+  print()
+  circl_answer = 3.14 * (radius * radius)
+  print(circl_answer)
+# calculations for the rectangle area
+if shapes == "rectangle":
+  print()
+  rect_answer = width * length
+  print(rect_answer)
+# calculations for the square area
+if shapes == "square":
+  print()
+  squar_answer = side * side
+  print(squar_answer)
 
