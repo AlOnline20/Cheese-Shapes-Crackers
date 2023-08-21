@@ -112,8 +112,9 @@ while looping == True:
       print()
       height = num_check("please enter the height of the parallelogram :")
       print()
+      aside = num_check("please enter the side of the parallelogram :")
       # makes sure the min and max of the parallelogram inputs are set and not overlooked
-      if base < MIN_VALUE or base > MAX_VALUE or height < MIN_VALUE or height > MAX_VALUE:
+      if base < MIN_VALUE or base > MAX_VALUE or height < MIN_VALUE or height > MAX_VALUE or aside < MIN_VALUE or aside > MAX_VALUE:
         print("please enter a value input between the minimum and maximum values")
         print()
       else:
@@ -161,24 +162,34 @@ while looping == True:
     print()
     print("please enter the correct value")
 
-# calculations for the parallelogram area
+print("  ---- RESULTS ----  ")
+
+# calculations for the parallelogram area and perimeter
 if shapes == "parallelogram":
   print()
-  para_answer = base * height 
-  print("in total the area of a parallelogram is {}cm".format(para_answer))
-# calculations for the circle area
+  para_area = base * height 
+  para_perimeter = 2 * (aside + base)
+  print("in total the area of a parallelogram is {}cm".format(para_area))
+  print("and in total the perimeter of a parallelogram is {}cm".format(para_perimeter))
+# calculations for the circle area and perimeter
 if shapes == "circle":
   print()
-  circl_answer = 3.14 * (radius * radius)
-  print("in total the area of a circle is {}cm".format(circl_answer))
-# calculations for the rectangle area
+  circl_area = 3.14 * (radius * radius)
+  circl_perimeter = 2 * 3.14 * radius
+  print("in total the area of a circle is {}cm".format(circl_area))
+  print("and in total the perimeter of a circle is {}cm".format(circl_perimeter))
+# calculations for the rectangle area and perimeter
 if shapes == "rectangle":
   print()
-  rect_answer = width * length
-  print("in total the area of a rectangle is {}cm".format(rect_answer))
-# calculations for the square area
+  rect_area = width * length
+  rect_perimeter = 2 * (length * width)
+  print("in total the area of a rectangle is {}cm".format(rect_area))
+  print("and in total the perimeter of a rectangle is {}cm".format(rect_perimeter))
+# calculations for the square area and perimeter
 if shapes == "square":
   print()
-  squar_answer = side * side
-  print("in total the area of a square is {}cm".format(squar_answer))
+  squar_area = side * side
+  squar_perimeter = 4 * side
+  print("in total the area of a square is {}cm".format(squar_area))
+  print("and in total the perimeter of a square is {}cm".format(squar_perimeter))
 
