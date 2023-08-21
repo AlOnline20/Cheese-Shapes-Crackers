@@ -113,6 +113,7 @@ while looping == True:
       height = num_check("please enter the height of the parallelogram :")
       print()
       aside = num_check("please enter the side of the parallelogram :")
+      print()
       # makes sure the min and max of the parallelogram inputs are set and not overlooked
       if base < MIN_VALUE or base > MAX_VALUE or height < MIN_VALUE or height > MAX_VALUE or aside < MIN_VALUE or aside > MAX_VALUE:
         print("please enter a value input between the minimum and maximum values")
@@ -162,6 +163,7 @@ while looping == True:
     print()
     print("please enter the correct value")
 
+# ---- RESULTS FOR THE PERIMETER & AREA ----
 print("  ---- RESULTS ----  ")
 
 # calculations for the parallelogram area and perimeter
@@ -169,27 +171,35 @@ if shapes == "parallelogram":
   print()
   para_area = base * height 
   para_perimeter = 2 * (aside + base)
+  sleep(1)
   print("in total the area of a parallelogram is {}cm".format(para_area))
+  sleep(1)
   print("and in total the perimeter of a parallelogram is {}cm".format(para_perimeter))
 # calculations for the circle area and perimeter
 if shapes == "circle":
   print()
   circl_area = 3.14 * (radius * radius)
   circl_perimeter = 2 * 3.14 * radius
+  sleep(1)
   print("in total the area of a circle is {}cm".format(circl_area))
+  sleep(1)
   print("and in total the perimeter of a circle is {}cm".format(circl_perimeter))
 # calculations for the rectangle area and perimeter
 if shapes == "rectangle":
   print()
   rect_area = width * length
   rect_perimeter = 2 * (length * width)
+  sleep(1)
   print("in total the area of a rectangle is {}cm".format(rect_area))
+  sleep(1)
   print("and in total the perimeter of a rectangle is {}cm".format(rect_perimeter))
 # calculations for the square area and perimeter
 if shapes == "square":
   print()
   squar_area = side * side
   squar_perimeter = 4 * side
+  sleep(1)
   print("in total the area of a square is {}cm".format(squar_area))
+  sleep(1)
   print("and in total the perimeter of a square is {}cm".format(squar_perimeter))
 
