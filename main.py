@@ -16,43 +16,64 @@ def yes_no(question):
     else:
       print("please enter yes or no")
 
-# number checker function
-def num_check(question):
-  
-  while True:
-    try:
-      
-      response = int(input(question))
-      return response
-      
-    except ValueError:
-      print("please enter an integer")
+# choose shape function
+def shape_quest(question):
 
-def shapes(question):
-  error = "you have not selected one of the advible shapes"
-  valid = False
-  while not valid:
-   
-    shape = input(question).lower().strip()
-    if shapes == "square":
-      shape = "squar"
+  while True:
+
+    shape = input(question).lower()
+    if shape == "parallelogram":
       return shape
-    elif shape == "rectangle":
-      shape = "rect"
+    if shape == "circle":
       return shape
-    elif shape == "circle":
-      shape = "circl"
+    if shape == "rectangle":
       return shape
-    elif shape == "parrallelagram":
-      shape = "para"
+    if shape == "square":
       return shape
     else:
-          print(error)  
+      print("please enter correct value")
 
-def dime_check():
-  
+# number and perameter checker
+def perameter_maker(question):
 
-def calc_dime():
+  while True:
+    try:
+      gate = int(input(question))
+      if gate in range(2,201):
+        print("alright")
+        return gate
+      else:
+        print("ERROR")
+    except ValueError:
+      print("error")
+
+# calculations for perimeter and area
+def calc_PandA():
+  if shape_picker == "parallelogram":
+    para_area = base * height 
+    para_perimeter = 2 * (aside + base)
+    print("The area total for parallelogram is {}cm".format(para_area))
+    print("The perimeter total for parallelogram is {}cm".format(para_perimeter))
+    return
+  if shape_picker == "circle":
+    circl_area = 3.14 * (radius * radius)
+    circl_perimeter = 2 * 3.14 * radius
+    print("The area total for circle is {}cm".format(circl_area))
+    print("The perimeter total for circle is {}cm".format(circl_perimeter))
+    return
+  if shape_picker == "rectangle":
+    rect_area = width * length
+    rect_perimeter = 2 * (length + width)
+    print("The area total for rectangle is {}cm".format(rect_area))
+    print("The perimeter total for rectangle is {}cm".format(rect_perimeter))
+    return
+  if shape_picker == "square":
+    squar_area = side * side
+    squar_perimeter = 4 * side
+    print("The area total for square is {}cm".format(squar_area))
+    print("The perimeter total for square is {}cm".format(squar_perimeter))
+    return
+
 # main routine down below
 
 want_instructions = yes_no("Do you want to read the instructions? :")
@@ -78,124 +99,52 @@ print("Lettuce begin")
 sleep(2)
 print()
 
-#to keep loop
-loopin = True
-
-
-
-#choose shape
-
-
+print("The four shapes that are available are parallelogram, rectangle, circle, and square ")
+# shape picker for the shapes given
+shape_picker = shape_quest("now which one of these four shapes would you like to input dimensions for? : ")
 
 # just for looks
 sleep(1)
 print("now it is time to enter the dimensions for the shape")
 
-
-# set loopin as well as the MIN & MAX values
-looping = True
-MAX_VALUE = 200
-MIN_VALUE = 2
-
 #loop for dimension values
-while looping == True:
-  try:
-    #inputs for the parallelogram dimensions
-    if shapes == "parallelogram":
-      print("with these values input, the min will be 2 & the max will be 200")
-      print()
-      base = num_check("please enter the base of the parallelogram :")
-      print()
-      height = num_check("please enter the height of the parallelogram :")
-      print()
-      aside = num_check("please enter the side of the parallelogram :")
-      print()
-      # makes sure the min and max of the parallelogram inputs are set and not overlooked
-      if base < MIN_VALUE or base > MAX_VALUE or height < MIN_VALUE or height > MAX_VALUE or aside < MIN_VALUE or aside > MAX_VALUE:
-        print("please enter a value input between the minimum and maximum values")
-        print()
-      else:
-        break
-    # inputs for the parallelogram dimensions
-    if shapes == "circle":
-      print("with this value input, the min will be 2 & the max will be 200")
-      print()
-      radius = num_check("please enter the radius of the circle :")
-      print()
-      # makes sure the min and max of the circle input are set and not overlooked
-      if radius < MIN_VALUE or radius > MAX_VALUE:
-        print("please enter a value input between the minimum and maximum values")
-        print()
-      else:
-        break
-    # inputs for the rectangle dimensions
-    if shapes == "rectangle":
-      print("with these values input, the min will be 2 & the max will be 200")
-      print()
-      length = num_check("please enter the length of the rectangle :")
-      print()
-      width = num_check("please enter the width of the rectangle :")
-      print()
-      # makes sure the min and max of the rectangle inputs are set and not overlooked
-      if length < MIN_VALUE or length > MAX_VALUE or width < MIN_VALUE or width > MAX_VALUE:
-        print("please enter a value input between the minimum and maximum values")
-        print()
-      else:
-        break
-    # inputs for the rectangle dimensions
-    if shapes == "square":
-      print("with this value input, the min will be 2 & the max will be 200")
-      print()
-      side = num_check("please enter the side of the square :")
-      print()
-      # makes sure the min and max of the square input are set and not overlooked
-      if side < MIN_VALUE or side > MAX_VALUE:
-        print("please enter a value input between the minimum and maximum values")
-        print()
-      else:
-        break
-
-  except ValueError:
+while True:
+  #inputs for the parallelogram dimensions
+  if shape_picker == "parallelogram":
+    print("with these values input, the min will be 2 & the max will be 200")
     print()
-    print("please enter the correct value")
+    base = perameter_maker("please enter the base of the parallelogram :")
+    print()
+    height = perameter_maker("please enter the height of the parallelogram :")
+    print()
+    aside = perameter_maker("please enter the side of the parallelogram :")
+    print()
+    break
+  # inputs for the parallelogram dimensions
+  if shape_picker == "circle":
+    print("with this value input, the min will be 2 & the max will be 200")
+    print()
+    radius = perameter_maker("please enter the radius of the circle :")
+    print()
+    break
+  # inputs for the rectangle dimensions
+  if shape_picker == "rectangle":
+    print("with these values input, the min will be 2 & the max will be 200")
+    print()
+    length = perameter_maker("please enter the length of the rectangle :")
+    print()
+    width = perameter_maker("please enter the width of the rectangle :")
+    print()
+    break
+  # inputs for the rectangle dimensions
+  if shape_picker == "square":
+    print("with this value input, the min will be 2 & the max will be 200")
+    print()
+    side = perameter_maker("please enter the side of the square :")
+    print()
+    break
 
-# ---- RESULTS FOR THE PERIMETER & AREA ----
-print("  ---- RESULTS ----  ")
-
-# calculations for the parallelogram area and perimeter
-if shapes == "parallelogram":
-  print()
-  para_area = base * height 
-  para_perimeter = 2 * (aside + base)
-  sleep(1)
-  print("in total the area of a parallelogram is {}cm".format(para_area))
-  sleep(1)
-  print("and in total the perimeter of a parallelogram is {}cm".format(para_perimeter))
-# calculations for the circle area and perimeter
-if shapes == "circle":
-  print()
-  circl_area = 3.14 * (radius * radius)
-  circl_perimeter = 2 * 3.14 * radius
-  sleep(1)
-  print("in total the area of a circle is {}cm".format(circl_area))
-  sleep(1)
-  print("and in total the perimeter of a circle is {}cm".format(circl_perimeter))
-# calculations for the rectangle area and perimeter
-if shapes == "rectangle":
-  print()
-  rect_area = width * length
-  rect_perimeter = 2 * (length + width)
-  sleep(1)
-  print("in total the area of a rectangle is {}cm".format(rect_area))
-  sleep(1)
-  print("and in total the perimeter of a rectangle is {}cm".format(rect_perimeter))
-# calculations for the square area and perimeter
-if shapes == "square":
-  print()
-  squar_area = side * side
-  squar_perimeter = 4 * side
-  sleep(1)
-  print("in total the area of a square is {}cm".format(squar_area))
-  sleep(1)
-  print("and in total the perimeter of a square is {}cm".format(squar_perimeter))
+#calculations results
+print(" ---- RESULTS ----")
+calc_PandA()
 
