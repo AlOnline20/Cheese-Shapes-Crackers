@@ -28,6 +28,31 @@ def num_check(question):
     except ValueError:
       print("please enter an integer")
 
+def shapes(question):
+  error = "you have not selected one of the advible shapes"
+  valid = False
+  while not valid:
+   
+    shape = input(question).lower().strip()
+    if shapes == "square":
+      shape = "squar"
+      return shape
+    elif shape == "rectangle":
+      shape = "rect"
+      return shape
+    elif shape == "circle":
+      shape = "circl"
+      return shape
+    elif shape == "parrallelagram":
+      shape = "para"
+      return shape
+    else:
+          print(error)  
+
+def dime_check():
+  
+
+def calc_dime():
 # main routine down below
 
 want_instructions = yes_no("Do you want to read the instructions? :")
@@ -58,37 +83,8 @@ loopin = True
 
 
 
-# while loop to choose shape
-while loopin == True:
-  # the four shapes that are available
-  print("The four shapes that are available are parallelogram, rectangle, circle, and square")
-  print()
-  sleep(2)
-  shaper = input("now which one of these four shapes would you like to input dimensions for? :").lower()
-  # code that makes sure each choice is recorded for later, small comments to make the user chuckle
-  if shaper == "parallelogram":
-    print("parallelogram huh, ok then.")
-    print()
-    shapes = "parallelogram"
-    break
-  if shaper == "circle":
-    print("Circle, nice choice.")
-    print()
-    shapes = "circle"
-    break
-  if shaper == "rectangle":
-    print("Rectangle, bold choice.")
-    print()
-    shapes = "rectangle"
-    break
-  if shaper == "square":
-    print("Square, wow first pick huh")
-    print()
-    shapes = "square"
-    break
-  else:
-    #error prevention
-    print("please enter one of the four shapes given")
+#choose shape
+
 
 
 # just for looks
@@ -188,7 +184,7 @@ if shapes == "circle":
 if shapes == "rectangle":
   print()
   rect_area = width * length
-  rect_perimeter = 2 * (length * width)
+  rect_perimeter = 2 * (length + width)
   sleep(1)
   print("in total the area of a rectangle is {}cm".format(rect_area))
   sleep(1)
