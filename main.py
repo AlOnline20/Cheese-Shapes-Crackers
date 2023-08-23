@@ -23,12 +23,16 @@ def shape_quest(question):
 
     shape = input(question).lower()
     if shape == "parallelogram":
+      print("parallelogram huh, ok then.")
       return shape
     if shape == "circle":
+      print("Circle, nice choice.")
       return shape
     if shape == "rectangle":
+      print("Rectangle, bold choice.")
       return shape
     if shape == "square":
+      print("Square, wow first pick huh")
       return shape
     else:
       print("please enter correct value")
@@ -100,51 +104,63 @@ sleep(2)
 print()
 
 print("The four shapes that are available are parallelogram, rectangle, circle, and square ")
+print()
 # shape picker for the shapes given
 shape_picker = shape_quest("now which one of these four shapes would you like to input dimensions for? : ")
 
 # just for looks
 sleep(1)
+print()
 print("now it is time to enter the dimensions for the shape")
-
+print()
+print("with these values input, the min will be 2 & the max will be 200")
+print()
 #loop for dimension values
 while True:
   #inputs for the parallelogram dimensions
   if shape_picker == "parallelogram":
-    print("with these values input, the min will be 2 & the max will be 200")
-    print()
     base = perameter_maker("please enter the base of the parallelogram :")
     print()
     height = perameter_maker("please enter the height of the parallelogram :")
     print()
     aside = perameter_maker("please enter the side of the parallelogram :")
+    sleep(1)
+    print("this shapes name is a mouthfull")
+    sleep(1)
     print()
     break
   # inputs for the parallelogram dimensions
   if shape_picker == "circle":
-    print("with this value input, the min will be 2 & the max will be 200")
-    print()
     radius = perameter_maker("please enter the radius of the circle :")
+    sleep(1)
+    print("all around best choice")
+    sleep(1)
     print()
     break
   # inputs for the rectangle dimensions
   if shape_picker == "rectangle":
-    print("with these values input, the min will be 2 & the max will be 200")
-    print()
     length = perameter_maker("please enter the length of the rectangle :")
     print()
     width = perameter_maker("please enter the width of the rectangle :")
+    sleep(1)
+    print("you are a bold one")
+    sleep(1)
     print()
     break
   # inputs for the rectangle dimensions
   if shape_picker == "square":
-    print("with this value input, the min will be 2 & the max will be 200")
-    print()
     side = perameter_maker("please enter the side of the square :")
+    sleep(1)
+    print("very generic pick dude")
+    sleep(1)
     print()
     break
+
+
+
 
 #calculations results
 print(" ---- RESULTS ----")
 calc_PandA()
-
+sleep(3)
+print("See you later")
