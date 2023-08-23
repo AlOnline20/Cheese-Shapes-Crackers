@@ -51,7 +51,7 @@ def perameter_maker(question):
     except ValueError:
       print("error")
 
-# calculations for perimeter and area
+# calculations for perimeter and area for the chosen shape
 def calc_PandA():
   if shape_picker == "parallelogram":
     para_area = base * height 
