@@ -1,3 +1,7 @@
+shapers = []
+area = []
+perimeter = []
+
 # sleep
 from time import sleep
 
@@ -47,37 +51,73 @@ def perameter_maker(question):
         print("alright")
         return gate
       else:
-        print("ERROR")
+        print("please keep the number in the 2-200 range")
     except ValueError:
-      print("error")
+      print("please enter a number")
 
 # calculations for perimeter and area for the chosen shape
-def calc_PandA():
-  if shape_picker == "parallelogram":
-    para_area = base * height 
-    para_perimeter = 2 * (aside + base)
-    print("The area total for parallelogram is {}cm".format(para_area))
-    print("The perimeter total for parallelogram is {}cm".format(para_perimeter))
-    return
-  if shape_picker == "circle":
-    circl_area = 3.14 * (radius * radius)
-    circl_perimeter = 2 * 3.14 * radius
-    print("The area total for circle is {}cm".format(circl_area))
-    print("The perimeter total for circle is {}cm".format(circl_perimeter))
-    return
-  if shape_picker == "rectangle":
-    rect_area = width * length
-    rect_perimeter = 2 * (length + width)
-    print("The area total for rectangle is {}cm".format(rect_area))
-    print("The perimeter total for rectangle is {}cm".format(rect_perimeter))
-    return
-  if shape_picker == "square":
-    squar_area = side * side
-    squar_perimeter = 4 * side
-    print("The area total for square is {}cm".format(squar_area))
-    print("The perimeter total for square is {}cm".format(squar_perimeter))
-    return
-
+def dimensions():
+  while True:
+    try:
+      #calculations for parallelogram
+      if shape == "parallelogram":
+        base = perameter_maker("please enter the base:")
+        height = perameter_maker("please enter the height:")
+        aside = perameter_maker("please enter the side:")
+        para_area = base * height 
+        para_perimeter = 2 * (aside + base)
+        area.append(para_area)
+        perimeter.append(para_perimeter)
+        #printing the are and perimeter of the parallelogram
+        print()
+        print("The area total for parallelogram is {}cm".format(para_area))
+        print()
+        print("The perimeter total for parallelogram is {}cm".format(para_perimeter))
+        return base,height,aside
+      #calculations for square
+      if shape == "square":
+        side = perameter_maker("please enter the side:")
+        squar_area = side * side
+        squar_perimeter = 4 * side
+        area.append(squar_area)
+        perimeter.append(squar_perimeter)
+        #printing the are and perimeter of the square
+        print()
+        print("The area total for square is {}cm".format(squar_area))
+        print()
+        print("The perimeter total for square is {}cm".format(squar_perimeter))
+        return side
+      #calculations for circle
+      if shape == "circle":
+        radius = perameter_maker("please enter the radius:")
+        circl_area = 3.14 * (radius * radius)
+        circl_perimeter = 2 * 3.14 * radius
+        area.append(circl_area)
+        perimeter.append(circl_perimeter)
+        #printing the are and perimeter of the circle
+        print()
+        print("The area total for circle is {}cm".format(circl_area))
+        print()
+        print("The perimeter total for circle is {}cm".format(circl_perimeter))
+        return radius
+      #calculations for rectangle
+      if shape == "rectangle":
+        length = perameter_maker("please enter the length:")
+        width = perameter_maker("please enter the width:")
+        rect_area = width * length
+        rect_perimeter = 2 * (length + width)
+        area.append(rect_area)
+        perimeter.append(rect_perimeter)
+        #printing the are and perimeter of the rectangle
+        print()
+        print("The area total for rectangle is {}cm".format(rect_area))
+        print()
+        print("The perimeter total for rectangleis{}cm".format(rect_perimeter))
+        return length,width
+      else:
+        print("error")
+    except ValueError:
+      print("ERROR")
 # main routine down below
 
 want_instructions = yes_no("Do you want to read the instructions? :")
@@ -102,65 +142,22 @@ sleep(2)
 print("Lettuce begin")
 sleep(2)
 print()
-
-print("The four shapes that are available are parallelogram, rectangle, circle, and square ")
-print()
-# shape picker for the shapes given
-shape_picker = shape_quest("now which one of these four shapes would you like to input dimensions for? : ")
-
-# just for looks
-sleep(1)
-print()
-print("now it is time to enter the dimensions for the shape")
-print()
-print("with these values input, the min will be 2 & the max will be 200")
-print()
-#loop for dimension values
+print("The four shapes that are available are parallelogram, rectangle, circle, and square")
+#loop to make sure you can go multiple times
 while True:
-  #inputs for the parallelogram dimensions
-  if shape_picker == "parallelogram":
-    base = perameter_maker("please enter the base of the parallelogram :")
-    print()
-    height = perameter_maker("please enter the height of the parallelogram :")
-    print()
-    aside = perameter_maker("please enter the side of the parallelogram :")
-    sleep(1)
-    print("this shapes name is a mouthfull")
-    sleep(1)
-    print()
-    break
-  # inputs for the parallelogram dimensions
-  if shape_picker == "circle":
-    radius = perameter_maker("please enter the radius of the circle :")
-    sleep(1)
-    print("all around best choice")
-    sleep(1)
-    print()
-    break
-  # inputs for the rectangle dimensions
-  if shape_picker == "rectangle":
-    length = perameter_maker("please enter the length of the rectangle :")
-    print()
-    width = perameter_maker("please enter the width of the rectangle :")
-    sleep(1)
-    print("you are a bold one")
-    sleep(1)
-    print()
-    break
-  # inputs for the rectangle dimensions
-  if shape_picker == "square":
-    side = perameter_maker("please enter the side of the square :")
-    sleep(1)
-    print("very generic pick dude")
-    sleep(1)
-    print()
+  shape = shape_quest("now which one of these four shapes would you like to input dimensions for? :")
+  print()
+  shapers.append(shape)
+  dimensions()
+  go_again = yes_no("would you like to go again?")
+  if go_again == "yes":
+    print("ok")
+  else:
     break
 
+print("Alrighty then")
+#print for the area, perimeter and the shape
+print("the shape(s) that were chosen were {}".format(shapers))
+print("the area(s) that were calculated were {}".format(area))
+print("the perimeter(s) that were calculated were {}".format(perimeter))
 
-
-
-#calculations results
-print(" ---- RESULTS ----")
-calc_PandA()
-sleep(3)
-print("See you later")
