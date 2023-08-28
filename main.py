@@ -112,7 +112,7 @@ def dimensions():
         print()
         print("The area total for rectangle is {}cm".format(rect_area))
         print()
-        print("The perimeter total for rectangleis{}cm".format(rect_perimeter))
+        print("The perimeter total for rectangle is {}cm".format(rect_perimeter))
         return length,width
       else:
         print("error")
